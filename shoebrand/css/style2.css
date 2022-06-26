@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+:root{
+    --white-color: #fff;
+    --primary-color:rgb(18, 18, 18);
+
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Poppins', sans-serif;
+    overflow: auto;
+}
+ul {
+    list-style-type: none;
+
+}
+
+a{
+    text-decoration: none;
+    color: var(--white-color);
+    
+}
+h1,h2,h3{
+    margin:2rem 0;
+    line-height: 3rem;
+}
+p{
+    margin: 2rem 0;
+}
+
+img{
+    width: 100%;
+}
+
+svg.open , svg.close {
+   width: 35px;
+   stroke: var(--white-color);
+}
+
+svg path {
+    fill: var(--white-color);
+}
+
+svg.close {
+    stroke: black;
+    cursor: pointer;
+}
+svg.close path {
+    fill: black;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
+
+
+
+/* code */
+
+/* header section */
+.hero-img{
+    position: absolute;
+    top: 0;
+    /* left: 0; */
+    z-index: -1;
+    background: url('../images/img1.jpg');
+    width: 100%;
+    height: 100vh;
+    background-position: 20% 20%;
+    background-size: cover;
+    /* margin-bottom: 100px; */
+    animation: intro 2s ease-in-out forwards;
+    /* animation: arrowAnimat 1s alternate-reverse infinite ; */
+}
+
+header h2{
+    color: var(--white-color);
+
+}
+
+header.flex{
+    justify-content: space-between;
+}
+
+svg.open{
+    stroke: var(--white-color);
+    cursor: pointer;
+
+}
+svg.open path {
+    fill: var(--white-color);
+}
+
+nav {
+    
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: var(--white-color);
+    width: 50%;
+    height: 100vh;
+    text-transform: uppercase;
+    z-index: 999;
+    transform: translateX(500px);
+    transition: all .5s ease-in;
+}
+
+nav ul {
+    margin-top: 8rem;
+}
+
+nav ul li a{
+    color: var(--primary-color);
+    /* background-color: bisque; */
+    padding: 0.75rem 4rem;
+    display: block;
+    font-weight: bold;
+
+
+}
+
+nav ul li a:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.nav-open{
+    transform: translateX(0px);
+}
+
+
+svg.close {
+    float: right;
+   margin: 2rem;
+}
+
+
+section.main{
+    width: 100%;
+
+}
+
+section.main {
+    display: inline-block;
+    margin-bottom: 200px;
+    color: var(--white-color);
+    animation: movedown 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+
+section.main h1{
+    font-size: 3rem;
+    line-height: 3.3rem;
+    font-weight: bold;
+}
+
+
+section.main p{
+    font-size: 1.5rem;
+    margin: 2rem 0;
+}
+
+.arrow {
+    position: relative;
+    /* display: block; */
+    animation: arrowAnimat 1s alternate-reverse infinite ;
+}
+
+
+.blog img {
+    height: 200px;
+    object-fit: cover;
+    /* object-position: center center; */
+
+}
+
+.blog-sec{
+    margin: 4rem 0;
+}
+
+
+
+
+/* media queries */
+
+@media screen and (min-width:750px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 6rem;
+    text-align: right;
+}    
+
+.blog-text ,.blog-sec img{
+    width: 80%;
+}
+
+.blog-sec.left {
+    grid-template-areas: 'left right';
+    
+  }
+  .blog-sec.left img {
+    grid-area: left;
+  }
+  .blog-sec.left .blog-text {
+    text-align: left;
+  }
+
+
+  .blog {
+    margin-top:5rem ;
+  }
+  nav {
+    width: 40%;
+  }
+  
+
+}
+
+@media screen and (min-width:950px) {
+    .hero-img{
+        width: 50%;
+        right: 0;
+    }
+
+section.main {
+    width: 450px;
+    color: var(--primary-color);
+}
+
+svg.arrow {
+    stroke: var(--primary-color);
+}
+svg.arrow path {
+    fill: var(--primary-color);
+
+}
+
+header h2{
+    color: var(--primary-color);
+}
+header h2 span {
+    color: red;
+}
+
+nav {
+    transform: translateY(0);
+    width: unset;
+    height: unset;
+    background-color: transparent;
+    /* color: var(--white-color); */
+    position: unset;
+    margin: 0;
+    /* right: ; */
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+nav ul li a {
+    color: var(--white-color);
+    padding: 0;
+    margin-left: 20px;
+}
+nav ul li a:hover {
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+svg.open,svg.close {
+    display: none;
+}
+
+
+
+}
+
+
+/* animations */
+
+@keyframes arrowAnimat {
+    from {transform: translateY(0);}
+    to {transform: translateY(30px);}
+}
+
+@keyframes intro {
+   
+    from { clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);}
+    to {clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);}
+}
+
+@keyframes movedown {
+    from {transform: translateY(-100px);
+    ;}
+    to {transform: translateY(0px);
+    opacity: 1;}
+}
+
