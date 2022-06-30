@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Roboto+Flex:opsz,wght@8..144,300;8..144,400&family=Sigmar+One&display=swap');
+
+font-family: 'Lalezar', cursive;    heading
+font-family: 'Roboto Flex', sans-serif;  text
+font-family: 'Sigmar One', cursive;   main-heading
+
+
+black : #23272a;
+
+white : #fff;
+
+blue : #5865f2;
