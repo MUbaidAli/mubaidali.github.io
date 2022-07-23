@@ -362,6 +362,7 @@ section.main-section {
     height: 100vh;
     position: relative;
     z-index: 4;
+    max-height: 600px;
 }
     section.main-section .main-content {
     max-width: 500px;
